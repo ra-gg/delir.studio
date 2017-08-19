@@ -1,0 +1,271 @@
+@import '_variables'
+@import '_global'
+@import 'CSS:./flexboxgrid'
+@import 'CSS:./font-awesome'
+
+= media_xs
+    @media only screen and (max-width: 47.999em)
+        @content
+
+= media_sm
+    @media only screen and (max-width: 61.999em)
+        @content
+
+.container
+    max-width: $size-container-width
+    padding: 0 1rem
+    margin: 0 auto
+
+.site-header
+    // height: 70px
+    // background-color: lighten($color-base, 100%)
+    background-color: #3c3e42
+    border-bottom: 3px solid $color-brand
+
+    a
+        color: #fff
+
+    .wrap
+        overflow: hidden
+        margin: 0 auto
+        max-width: $size-container-width
+
+        font-size: 26px
+        line-height: 32px
+
+    .container
+        padding: 0
+
+.site-header-logo
+    display: inline-block
+    padding: 16px 8px
+
+    font-size: 32px
+    font-weight: 100
+    line-height: 1
+    vertical-align: middle
+
+    color: $color-brand
+    text-align: left
+    text-decoration: none
+
+    small
+        margin-left: 1rem
+
+        font-size: 16px
+        font-weight: normal
+        line-height: inherit
+
+        color: $color-brand-sub
+
+    .logo
+        width: 48px
+        height: 48px
+        line-height: 24px
+        transform: translateY(8px)
+
+.site-header-nav
+    padding: 0 8px
+    height: 64px
+    line-height: 16px
+    overflow: auto
+    text-align: right
+    white-space: nowrap
+
+    +media_sm
+        text-align: left
+
+        a
+            padding: 8px 0
+
+    a
+        display: inline-block
+        padding: 16px 0
+        margin-right: 1.5rem
+
+        font-size: 16px
+        line-height: 32px
+
+        text-decoration: none
+        color: #fff
+
+        &:hover
+            text-decoration: underline
+
+        &.active
+            border-bottom: 2px solid $color-brand
+
+        &.login
+            $transparent: rgba($color-brand, 0)
+            padding-left: 1rem
+            border-image: linear-gradient(to bottom, $transparent, $color-brand, $transparent) 1 100%
+            border-left: 1px solid
+
+        &:last-child
+            margin-right: 0
+
+._form-horizontal
+    .form-group
+        margin-bottom: 1rem
+
+._form-control
+    padding: 4px
+    background-color: transparent
+    color: inherit
+    line-height: 1.7
+    outline: none
+
+    border: none
+    border-bottom: 1px solid #c6c6c6
+
+    transition: border-bottom-color .1s
+
+    &.large
+        width: 20rem
+        padding: 8px
+        font-size: 1.2rem
+        line-height: 1
+
+    &.centered
+        text-align: center
+
+    &:focus
+        border-bottom: 1px solid $color-brand
+        user-select: none
+
+._pane
+    border-radius: 4px
+
+    &.centered
+        text-align: center
+
+    .header
+        padding: 16px
+        // border-bottom: 1px solid #d0d3da
+
+        h1
+            font-size: 16px
+            line-height: 30px
+
+    .body
+        padding: 16px 32px
+
+._row
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    // margin-left: -2rem
+
+    .col
+        margin-left: 2rem
+        &:first-child
+            margin-left: 0
+
+    // @for: $idx in (1..12)\idx
+
+._button
+    padding: 8px 16px
+    text-align: center
+
+    background: #ddd
+    border-radius: 4px
+    border: none
+    text-decoration: none
+
+    &.large
+        display: block
+        font-size: 1.2rem
+
+    &.submit
+        color: #fff
+        background-color: #11a0cd
+
+._cfx
+    clearfix()
+._left
+    float: left
+._right
+    float: right
+
+
+//
+//
+//
+
+.Hero
+    position: relative
+    // padding: 24px
+    padding: calc(10vh)
+    height: calc(100vh - 70px)
+
+    background-color: lighten(#38333e, 10%)
+    border-bottom: 1px solid lighten($color-brand, 20%)
+
+    .container
+        padding: 0
+
+    h1
+        margin-top: 0
+        line-height: 1.2
+
+        small
+            font-size: 1.2rem
+            font-weight: normal
+
+    .side
+        position: relative
+        z-index: 1
+
+        display: inline-block
+        padding: 4px 24px 8px 16px
+
+        color: $color-brand-sub
+        background-color: $color-base
+        box-shadow: 8px 4px 0 #ff00de //, -4px -4px 0 #00ff85
+        border-left: 3px solid $color-brand
+        border-right: 3px solid $color-brand
+
+        h1
+            // display: inline-block
+            margin: .5rem
+
+            color: $color-brand
+            font-family: 'Avenir Next'
+            font-size: 3rem
+            line-height: 1.1
+            // text-align center
+
+        small
+            display: block
+            margin-top: 8px
+
+            font-size: 16px
+            line-height: 1.2
+            text-align: left
+
+            color: darken($color-brand, 20%)
+
+        p
+            margin-top: 1rem
+            color: darken($color-brand, 20%)
+
+    .Hero_Screenshot
+        display: inline-block
+        width: 100%
+
+    .button
+        position: absolute
+        bottom: 32px
+        z-index: 1
+
+        display: block
+        padding: 8px 32px
+
+        text-align: center
+        font-family: 'Avenir Next'
+        font-size: 24px
+        text-decoration: none
+
+        color: #fff
+        background-color: #0091d9
+        border-radius: 4px

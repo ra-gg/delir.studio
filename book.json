@@ -1,0 +1,4 @@
+{
+    "root": "book/",
+    "plugins": ["lb2br"]
+}

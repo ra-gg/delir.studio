@@ -1,0 +1,27 @@
+doctype html
+html(lang='ja')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Delir
+
+        link(rel="stylesheet" href='/assets/styles/style.css')
+        block asset_links
+
+    body
+        header.site-header
+            .wrap
+                .row.between-xs
+                    .col-sm-12.col-md-3
+                        a.site-header-logo(href='/')
+                            | Delir
+                            small alpha release
+                    .col-sm-12.col-md-9
+                        nav.site-header-nav
+                            a(href='/docs') ドキュメント
+                            a(href='https://github.com/Ragg-/delir') GitHub
+                            a(href='https://discord.gg/rrr2z2E ') Discord
+                            a(href='https://trello.com/b/2WiN64z2/delir') ロードマップ(Trello)
+
+        block content
