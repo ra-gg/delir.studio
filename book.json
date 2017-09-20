@@ -1,4 +1,9 @@
 {
     "root": "book/",
-    "plugins": ["lb2br"]
+    "plugins": ["lb2br", "ga"],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-106143466-1"
+        }
+    }
 }
