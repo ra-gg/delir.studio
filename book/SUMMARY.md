@@ -3,6 +3,8 @@
 * [Introduction](README.md)
 * 使い方
     * [画面構成](usage/01_window.md)
+    * [クリップ](usage/clip/00_summary.md)
+        * [p5.js](usage/clip/06_p5js.md)
     * [エクスプレッション](usage/0x_expression.md)
 * [プラグイン開発](plugin/00_summary.md)
     * [ポストエフェクト](plugin/01_post_effect.md)
