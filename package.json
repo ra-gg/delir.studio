@@ -2,7 +2,7 @@
   "name": "delir.studio",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ragg <Ragg-@users.noreply.github.com>",
+  "author": "Ragg <ra-gg@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "dev": "gulp",

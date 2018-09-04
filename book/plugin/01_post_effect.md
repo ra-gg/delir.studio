@@ -1,8 +1,8 @@
 # ポストエフェクト
 ポストエフェクトプラグインでは、レンダラーによってレンダリングされた画素情報を加工することが出来ます。
 
-[サンプルプロジェクト(GitHub)](https://github.com/Ragg-/Delir/tree/master/src/delir-core/plugin-example)
-[プロジェクトテンプレートをダウンロード](https://github.com/Ragg-/Delir/files/906748/plugin-example-88bd02b.zip)
+[サンプルプロジェクト(GitHub)](https://github.com/ra-gg/Delir/tree/master/packages/delir-core/plugin-example)
+[プロジェクトテンプレートをダウンロード](https://github.com/ra-gg/Delir/files/906748/plugin-example-88bd02b.zip)
 
 **注意**
 > Alpha.5現在、ポストエフェクトは試験的な機能です。

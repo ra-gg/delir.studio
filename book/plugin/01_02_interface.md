@@ -1,7 +1,7 @@
 # ポストエフェクト
 
 ## プラグインインターフェース
-ソースコード: https://github.com/Ragg-/Delir/blob/master/src/delir-core/plugin-example/src/index.ts
+ソースコード: https://github.com/ra-gg/Delir/blob/master/packages/delir-core/plugin-example/src/index.ts
 
 ### `static provideParameters()`
 プラグインで利用可能なパラメータを返します。
