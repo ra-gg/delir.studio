@@ -1,14 +1,14 @@
 # ポストエフェクト
 ポストエフェクトプラグインでは、レンダラーによってレンダリングされた画素情報を加工することが出来ます。
 
-[サンプルプロジェクト(GitHub)](https://github.com/Ragg-/Delir/tree/master/src/delir-core/plugin-example)
-[プロジェクトテンプレートをダウンロード](https://github.com/Ragg-/Delir/files/906748/plugin-example-88bd02b.zip)
+[サンプルプロジェクト(GitHub)](https://github.com/ra-gg/Delir/tree/master/packages/delir-core/plugin-example)
+[プロジェクトテンプレートをダウンロード](https://github.com/ra-gg/Delir/files/906748/plugin-example-88bd02b.zip)
 
 **注意**
-> v0.4.0 現在、ポストエフェクトは試験的な機能です。
-> Canvas 2D Context によるポストエフェクトは安定して利用できますが、WebGLの利用については不安定です。
-> 詳しくは [実験的機能](/plugin/01_03_experimental.md) をご参照ください。
-
+> Alpha.5現在、ポストエフェクトは試験的な機能です。
+>
+> Alpha.4で実験的に対応されたWebGLの利用は、安定性の問題でAlpha.5で廃止されました。
+> 将来的に別の方法で対応される予定です。
 
 ## 開発のはじめ方
 - **事前に`Node.js`と`yarn`のインストールが必要です。**
