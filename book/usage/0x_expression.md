@@ -3,34 +3,59 @@ Delirでは、クリップ・エフェクトの各パラメータに対してJav
 スクリプトの最後で評価された値がパラメータの値になります。
 
 ```javascript
-progression = ctx.time / ctx.duration // この行はパラメータに影響を与えません
+progression = thisComp.time / thisComp.duration // この行はパラメータに影響を与えません
 progression * 10 // ← この行の計算結果がパラメータに設定されます。
 ```
 
 ## グローバルオブジェクト
-### `ctx`
-ctxオブジェクトは現在のレンダリングセッションに関わる情報が記録されています。
+### `thisComp`
+現在のコンポジションを表すオブジェクトです。
 
-#### プロパティ
-- `ctx.time`: number<br>
-  現在の再生時間(秒)
-- `ctx.frame`: number<br>
-  現在のフレーム番号
-- `ctx.timeOnComposition`: number<br>
-  クリップが再生されているコンポジション上での時間(秒)
-- `ctx.frameOnComposition`: number<br>
-  クリップが再生されているコンポジション上でのフレーム番号
-- `ctx.width`: number<br>
-  画面の幅ピクセル数
-- `ctx.height`: number<br>
-  画面の高さピクセル数
-- `ctx.audioBuffer`: Float32Array[] <br>
-  **現在利用できません** バッファリングされている音声の生データです。
-- `ctx.duration`: number<br>
-  コンポジション全体の再生時間(秒)
-- `ctx.durationFrames`: number<br>
-  コンポジション全体のフレーム数
-- `ctx.clipProp`: {[propertyName: string]: any}<br>
-　**現在利用できません**
-- `ctx.currentValue`: any<br>
-  現在パラメータに設定されている値です。パラメータによって型が異なります
+#### プロパティ・メソッド
+- `thisComp.width`: number<br />
+  コンポジションの幅(px)
+- `thisComp.height`: number<br />
+  コンポジションの高さ(px)
+- `thisComp.time`: number<br />
+  コンポジション上の経過時間(秒)
+- `thisComp.frame`: number<br />
+  コンポジション上の経過フレーム数
+- `thisComp.duration`: number<br />
+  コンポジションの長さ(秒)
+- `thisComp.durationFrames`: number<br />
+  コンポジションの長さ(フレーム数)
+- `thisComp.audioBuffer`: Float32Array[]<br />
+  **[experimental]** レンダリング済みのオーディオバッファ。<br />
+  各要素がオーディオの1チャンネルに対応します。<br />
+  バッファ長はDelirのバージョンによって変動することがあります。<br />
+  （現在は、クリップの置かれたレイヤーの位置によって同フレーム内でも内容が変化します）<br />
+  ※ p5.jsコード内では利用できません。
+
+### `thisClip`
+現在のクリップを表すオブジェクトです。
+
+#### プロパティ・メソッド
+- `thisClip.time`: number<br />
+  クリップ上の経過時間(秒)
+- `thisClip.frame`: number<br />
+  クリップ上の経過フレーム数
+- `thisClip.params`: Readonly&lt;{ [paramName: string]: any }&gt;<br />
+  現在のフレームでのエクスプレッション適用前の各キーフレームの値。<br />
+  クリップによって中身が変わるので、`console.log()`を使って開発者コンソールで中身を確認してください<br />
+  ※ p5.jsコード内では利用できません。
+- `thisClip.effect(referenceName: string): Effect`<br />
+  エフェクトを取得する。`referenceName`にはエフェクトに設定した参照名を指定します。<br />
+
+  > 例
+  > 参照名をこのように設定した場合
+  > <img src="../../assets/usage/effect-reference-name.png" style='height: 50px' /><br />
+  > コードはこのようにする: `thisClip.effect('参照名')`
+
+## Effect オブジェクト
+エフェクトを表すオブジェクトです。
+`thisClip.effect()`メソッドなどを通して取得されます。
+
+#### プロパティ・メソッド
+- `effect.params`: Readonly<{ [paramName: string]: any }>
+  現在のフレームでのエクスプレッション適用前の各キーフレームの値。<br />
+  エフェクトによって中身が変わるので、`console.log()`を使って開発者コンソールで中身を確認してください

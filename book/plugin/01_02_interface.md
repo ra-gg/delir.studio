@@ -34,14 +34,14 @@ return Type
     .enum('fontFamily', { label: '書体', selection: ['sans-serif', 'serif'], defaultValue: 'serif' })
 ```
 
-### `async initialize(req: RenderRequest)`
+### `async initialize(req: PreRenderContext)`
 レンダリング開始前の初期化処理で呼ばれるメソッドです。
 画像などのファイルの読み込みはここで行います。
 
 `req`オブジェクトには、パラメータの初期値などが含まれています。
 
 ```javascript
-async initialize(req: RenderRequest) {
+async initialize(req: PreRenderContext<Params>) {
     // preRenderReq.parametersにprovideParametersメソッドで指定したパラメータ名で初期値が渡されます
     const parameters = preRenderReq.parameters;
     const imageAsset = parameters.image;
@@ -56,7 +56,7 @@ async initialize(req: RenderRequest) {
 }
 ```
 
-### `async render(req: RenderRequest)`
+### `async render(req: RenderContext)`
 １フレームのレンダリングを行います。
 `req`オブジェクトには以下のパラメータなどが渡されます
 
@@ -69,7 +69,7 @@ async initialize(req: RenderRequest) {
 - `req.frame` - 再生フレーム番号
 
 ```javascript
-async render(req: RenderRequest)
+async render(req: RenderContext<Params>)
 {
     if (this.image == null) return;
 
