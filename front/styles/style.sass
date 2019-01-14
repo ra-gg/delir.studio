@@ -1,7 +1,7 @@
 @import '_variables'
 @import '_global'
-@import 'CSS:./flexboxgrid'
-@import 'CSS:./font-awesome'
+@import './flexboxgrid'
+@import './font-awesome'
 
 = media_xs
     @media only screen and (max-width: 47.999em)
@@ -10,6 +10,12 @@
 = media_sm
     @media only screen and (max-width: 61.999em)
         @content
+
+= clearfix
+    &::after
+        content: ''
+        display: table
+        clear: both
 
 .container
     max-width: $size-container-width
@@ -179,7 +185,7 @@
         background-color: #11a0cd
 
 ._cfx
-    clearfix()
+    +clearfix()
 ._left
     float: left
 ._right
