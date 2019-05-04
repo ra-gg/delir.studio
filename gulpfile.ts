@@ -68,8 +68,9 @@ export function runWebpack(done) {
 }
 
 export function gitbookBuild() {
-  spawn("yarn", ["book-build"], { stdio: "inherit" });
-  return Promise.resolve();
+  return new Promise(resolve => {
+    spawn("yarn", ["book-build"], { stdio: "inherit" }).on("exit", resolve);
+  });
 }
 
 export function gitbookWatch() {
