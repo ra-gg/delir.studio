@@ -187,6 +187,7 @@ export default (props: IndexPageProps) => {
             }
           />
 
+          {/*
           <Feature
             title="Post-effect by WebGL"
             desc={
@@ -208,6 +209,7 @@ export default (props: IndexPageProps) => {
               />
             }
           />
+          */}
 
           <Feature
             title="Stand-alone engine"

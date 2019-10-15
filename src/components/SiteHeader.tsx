@@ -68,7 +68,7 @@ export const SiteHeader = () => (
       <div className="row between-xs">
         <div className="col-xs-12 col-md-3">
           <BrandLink to="/" style={{ color: "#fff" }}>
-            Delir<small style={{ color: "#865d98" }}>Alpha.7</small>
+            Delir<small style={{ color: "#865d98" }}>Alpha.6</small>
           </BrandLink>
         </div>
         <SiteNav className="col-xs-12 col-md-9">
