@@ -3,7 +3,7 @@ import { spawn } from "child_process";
 
 export function gitbookBuild() {
   return new Promise((resolve, reject) => {
-    spawn("yarn", ["book-build"], { stdio: "inherit" }).on("exit", code =>
+    spawn("yarn", ["book:build"], { stdio: "inherit" }).on("exit", code =>
       code === 0 ? resolve() : reject()
     );
   });
@@ -23,7 +23,7 @@ export function runGatsby() {
 }
 
 export function gitbookWatch() {
-  spawn("yarn", ["book-dev", "--", "--port", "4001"], { stdio: "inherit" });
+  spawn("yarn", ["book:dev", "--", "--port", "4001"], { stdio: "inherit" });
   return Promise.resolve();
 }
 
