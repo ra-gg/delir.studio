@@ -3,3 +3,8 @@ node_modules/
 /_book
 /public
 !/public/.gitkeep
+node_modules
+.cache/
+# Build directory
+public/
+yarn-error.log

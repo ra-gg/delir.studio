@@ -1,11 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "es2016",
-        "moduleResolution": "node",
-        "lib": [
-            "dom",
-            "es2015",
-            "es2016"
-        ]
-    }
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015", "es2017"]
+  },
+  "include": ["./src/**/*"]
 }
