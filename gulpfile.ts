@@ -1,5 +1,11 @@
 import g from "gulp";
 import { spawn } from "child_process";
+import rmfr from "rmfr";
+import { join } from "path";
+
+export async function cleanBuild() {
+  await rmfr(join(__dirname, "public"));
+}
 
 export function gitbookBuild() {
   return new Promise((resolve, reject) => {
@@ -27,6 +33,9 @@ export function gitbookWatch() {
   return Promise.resolve();
 }
 
-export const build = g.parallel(gitbookBuild, gatsbyBuild);
+export const build = g.series(
+  cleanBuild,
+  g.parallel(gitbookBuild, gatsbyBuild)
+);
 
 export const watch = g.parallel(gitbookWatch, runGatsby);
