@@ -33,9 +33,6 @@ export function gitbookWatch() {
   return Promise.resolve();
 }
 
-export const build = g.series(
-  cleanBuild,
-  g.parallel(gitbookBuild, gatsbyBuild)
-);
+export const build = g.series(cleanBuild, gatsbyBuild, gitbookBuild);
 
 export const watch = g.parallel(gitbookWatch, runGatsby);
