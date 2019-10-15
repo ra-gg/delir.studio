@@ -1,10 +1,10 @@
 import * as React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import { SiteHeader } from "../components/SiteHeader";
+import { SiteHeader } from "./SiteHeader";
 import { createGlobalStyle } from "styled-components";
-import "./flexboxgrid.css";
-import { SiteFooter } from "../components/SiteFooter";
+import "../assets/flexboxgrid.css";
+import { SiteFooter } from "./SiteFooter";
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
@@ -83,7 +83,7 @@ export default (props: DefaultLayoutProps) => {
         ]}
       />
       <SiteHeader />
-      <main>{props.children()}</main>
+      <main>{props.children}</main>
       <SiteFooter />
     </div>
   );

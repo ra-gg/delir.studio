@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import Link from "gatsby-link";
 import { Container } from "../components/Container";
 import styled from "styled-components";
 import { cssVars } from "../utils/cssVars";
@@ -8,9 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEdit,
   faSuperscript,
-  IconDefinition,
   faCubes
 } from "@fortawesome/free-solid-svg-icons";
+import Layout from "../components/Layout";
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -133,124 +132,119 @@ const Feature = ({
   );
 };
 
-export default class extends React.Component<IndexPageProps, {}> {
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context);
-  }
-  public render() {
-    return (
-      <div>
-        <Hero>
-          <Container>
-            <div className="row">
-              <div
-                className="col-xs-12 col-md-5"
-                style={{
-                  overflow: "hidden",
-                  display: "flex",
-                  flexFlow: "column",
-                  justifyContent: "center"
-                }}
-              >
-                <div>
-                  <Title>Delir</Title>
-                  <SubTitle>
-                    Web technology driven VFX app
-                    <br />
-                    (Alpha release)
-                  </SubTitle>
-                </div>
-                <DownloadButton href="https://github.com/ra-gg/Delir/releases/latest">
-                  Download
-                  <small>Available on Windows, macOS and Linux</small>
-                </DownloadButton>
-              </div>
-              <div className="col-xs-12 col-md-7">
-                <HeroImage src={require("../assets/screenshot.png")} />
-              </div>
-            </div>
-          </Container>
-        </Hero>
-
-        <Container as="section" style={{ paddingBottom: "32px" }}>
-          <h1 style={{ textAlign: "center" }}>Features</h1>
-
-          <FeatureList>
-            <Feature
-              title="p5.js integration"
-              desc="Engine usable as node package, it's published as `@delirvfx/core` on npm"
-              icon={
-                <img
-                  src={require("../assets/p5js.svg")}
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    width: "100%",
-                    transform: "translateY(-50%)"
-                  }}
-                />
-              }
-            />
-
-            <Feature
-              title="Post-effect by WebGL"
-              desc={
-                <>
-                  <b>(Experimental)</b>
+export default (props: IndexPageProps) => {
+  return (
+    <Layout>
+      <Hero>
+        <Container>
+          <div className="row">
+            <div
+              className="col-xs-12 col-md-5"
+              style={{
+                overflow: "hidden",
+                display: "flex",
+                flexFlow: "column",
+                justifyContent: "center"
+              }}
+            >
+              <div>
+                <Title>Delir</Title>
+                <SubTitle>
+                  Web technology driven VFX app
                   <br />
-                  Support post processing with HTML5 Canvas and WebGL
-                </>
-              }
-              icon={
-                <img
-                  src={require("../assets/webgl.svg")}
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    width: "100%",
-                    transform: "translateY(-50%)"
-                  }}
-                />
-              }
-            />
-
-            <Feature
-              title="Stand-alone engine"
-              desc="Engine usable as stand-alone, it's published as `@delirvfx/core` on npm"
-              icon={
-                <FontAwesomeIcon
-                  style={{ width: "100%", height: "100%", color: "#ddd" }}
-                  icon={faCubes}
-                />
-              }
-            />
-
-            <Feature
-              title="Basic editing"
-              desc="Support basic editing. Can using video, image (of course SVG support), audio"
-              icon={
-                <FontAwesomeIcon
-                  style={{ width: "100%", height: "100%", color: "#ddd" }}
-                  icon={faEdit}
-                />
-              }
-            />
-            <Feature
-              title="Expression support"
-              desc="Expression works, with animated value, with early JavaScript syntax"
-              icon={
-                <FontAwesomeIcon
-                  style={{ width: "100%", height: "100%", color: "#ddd" }}
-                  icon={faSuperscript}
-                />
-              }
-            />
-          </FeatureList>
+                  (Alpha release)
+                </SubTitle>
+              </div>
+              <DownloadButton href="https://github.com/ra-gg/Delir/releases/latest">
+                Download
+                <small>Available on Windows, macOS and Linux</small>
+              </DownloadButton>
+            </div>
+            <div className="col-xs-12 col-md-7">
+              <HeroImage src={require("../assets/screenshot.png")} />
+            </div>
+          </div>
         </Container>
-      </div>
-    );
-  }
-}
+      </Hero>
+
+      <Container as="section" style={{ paddingBottom: "32px" }}>
+        <h1 style={{ textAlign: "center" }}>Features</h1>
+
+        <FeatureList>
+          <Feature
+            title="p5.js integration"
+            desc="Engine usable as node package, it's published as `@delirvfx/core` on npm"
+            icon={
+              <img
+                src={require("../assets/p5js.svg")}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  width: "100%",
+                  transform: "translateY(-50%)"
+                }}
+              />
+            }
+          />
+
+          <Feature
+            title="Post-effect by WebGL"
+            desc={
+              <>
+                <b>(Experimental)</b>
+                <br />
+                Support post processing with HTML5 Canvas and WebGL
+              </>
+            }
+            icon={
+              <img
+                src={require("../assets/webgl.svg")}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  width: "100%",
+                  transform: "translateY(-50%)"
+                }}
+              />
+            }
+          />
+
+          <Feature
+            title="Stand-alone engine"
+            desc="Engine usable as stand-alone, it's published as `@delirvfx/core` on npm"
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faCubes}
+              />
+            }
+          />
+
+          <Feature
+            title="Basic editing"
+            desc="Support basic editing. Can using video, image (of course SVG support), audio"
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faEdit}
+              />
+            }
+          />
+          <Feature
+            title="Expression support"
+            desc="Expression works, with animated value, with early JavaScript syntax"
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faSuperscript}
+              />
+            }
+          />
+        </FeatureList>
+      </Container>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query IndexQuery {
