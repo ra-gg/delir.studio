@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef, useEffect } from "react";
 import { Container } from "../components/Container";
 import styled from "styled-components";
 import { cssVars } from "../utils/cssVars";
@@ -10,6 +10,7 @@ import {
   faCubes
 } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/Layout";
+import useMeasure from "use-measure";
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -24,7 +25,8 @@ interface IndexPageProps {
 }
 
 const Hero = styled.section`
-  padding: 32px 0;
+  position: relative;
+  padding: 64px 0;
   color: #e8e8e8;
   background-color: ${darken(0.05, cssVars.colors.appBg)};
 `;
@@ -132,11 +134,126 @@ const Feature = ({
   );
 };
 
+const rangeRandom = (min: number, max: number) =>
+  Math.random() * (max - min) + min;
+
+class Particle {
+  private type: "stroke" | "fill";
+  private position: [number, number];
+  private points: [number, number][] = [];
+  private movement: number;
+  private t: number;
+
+  constructor(position: [number, number]) {
+    this.position = position;
+    this.generate();
+  }
+
+  generate() {
+    this.points = [
+      [-50 + 100 * Math.random(), -50 + 100 * Math.random()],
+      [-50 + 100 * Math.random(), -50 + 100 * Math.random()],
+      [-50 + 100 * Math.random(), -50 + 100 * Math.random()]
+    ];
+    this.type = Math.random() > 0.5 ? "stroke" : "fill";
+    this.movement = rangeRandom(0.5, 2);
+    this.t = Date.now();
+  }
+
+  render(ctx: CanvasRenderingContext2D) {
+    const [p1, p2, p3] = this.points;
+    const [x, y] = this.position;
+    const t = Date.now() - this.t;
+
+    ctx.beginPath();
+    ctx.moveTo(p1[0] + x, p1[0] + y);
+    ctx.lineTo(p2[0] + x, p2[1] + y);
+    ctx.lineTo(p3[0] + x, p3[1] + y);
+    ctx.closePath();
+    this.type === "fill" ? ctx.fill() : ctx.stroke();
+
+    this.points[0] = [
+      this.points[0][0] * rangeRandom(0.99, 0.999),
+      this.points[0][1] * rangeRandom(0.99, 0.999)
+    ];
+    this.points[1] = [
+      this.points[1][0] * rangeRandom(0.99, 0.999),
+      this.points[1][1] * rangeRandom(0.99, 0.999)
+    ];
+    this.points[2] = [
+      this.points[2][0] * rangeRandom(0.99, 0.999),
+      this.points[2][1] * rangeRandom(0.99, 0.999)
+    ];
+
+    if (y < -100) {
+      this.generate();
+      this.position = [
+        x + rangeRandom(-0.5, 0.5),
+        ctx.canvas.height * rangeRandom(0.5, 1.5)
+      ];
+    } else {
+      this.position = [x - 0.5 * Math.sin(t / 1000), y - this.movement];
+    }
+  }
+}
+
 export default (props: IndexPageProps) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasRect = useMeasure(canvasRef);
+  const particlesRef = useRef<Particle[]>([]);
+
+  useEffect(() => {
+    let animationId: number;
+
+    const ctx = canvasRef.current!.getContext("2d");
+    const { width, height } = canvasRef.current!;
+
+    particlesRef.current = [...Array(100)].map(
+      () =>
+        new Particle([width * Math.random(), height * rangeRandom(0.5, 1.5)])
+    );
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvasRef.current!.width, canvasRef.current!.height);
+      ctx.fillStyle = "rgba(255, 255, 255, .1)";
+      ctx.strokeStyle = "rgba(255, 255, 255, .1)";
+      particlesRef.current!.map(p => p.render(ctx));
+      animationId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current!;
+    canvas.width = canvasRect.width;
+    canvas.height = canvasRect.height;
+    particlesRef.current = [...Array(100)].map(
+      () =>
+        new Particle([
+          canvas.width * Math.random(),
+          canvas.height * rangeRandom(0.5, 1.5)
+        ])
+    );
+  }, [canvasRect.width, canvasRect.height]);
+
   return (
     <Layout>
       <Hero>
-        <Container>
+        <canvas
+          ref={canvasRef}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%"
+            // background: "red"
+          }}
+        />
+        <Container style={{ position: "relative" }}>
           <div className="row">
             <div
               className="col-xs-12 col-md-5"
