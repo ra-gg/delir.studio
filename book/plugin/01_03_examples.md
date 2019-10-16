@@ -1,5 +1,5 @@
 ---
-delir_version: Alpha.6
+delir_version: Alpha.7
 ---
 
 # ポストエフェクト
