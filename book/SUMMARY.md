@@ -14,5 +14,5 @@
     - [実装例](plugin/01_03_examples.md)
 - [更新履歴](changelog.md)
 - [アーキテクチャ](architecture/00_summary.md)
-  - [delir-core](architecture/01_delir_core.md)
+  - [@delirvfx/core](architecture/01_delir_core.md)
   - [Delir](architecture/02_delir.md)

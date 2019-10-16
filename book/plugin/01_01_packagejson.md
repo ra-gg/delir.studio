@@ -15,19 +15,19 @@ delir_version: Alpha.6
 - version --- "1.10.2" のような３つのドット区切りの数字
 - author `"Name (URL)"`形式の文字列（`Name &lt;mail@address&gt; (URL)` のような記述も可能です）
 - engines
-  - delir-core : 作成するプラグインが動作できる delir-core のバージョン。`0.4.x` のような指定が可能です。
+  - @delirvfx/core : 作成するプラグインが動作できる @delirvfx/core のバージョン。`0.4.x` のような指定が可能です。
 - delir
   - name: プラグインの表示名。日本語などが利用可能です
   - type: `post-effect` 固定。
 
 ### `engines.delir`
 
-動作対象となる`delir-core`のバージョンを指定します。
+動作対象となる`@delirvfx/core`のバージョンを指定します。
 （Delir のバージョンではありません。）
 
 ```json5
     "engines": {
-        "delir-core": "0.6.x" // => v0.6.*　対応ポストエフェクト
+        "@delirvfx/core": "0.6.x" // => v0.6.*　対応ポストエフェクト
     }
 ```
 
