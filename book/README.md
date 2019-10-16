@@ -1,3 +1,7 @@
+---
+delir_version: Alpha.7
+---
+
 # Delir User Documentation
 
 ![screenshot](./assets/screenshot.png)

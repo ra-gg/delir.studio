@@ -1,5 +1,5 @@
 ---
-delir_version: Alpha.6
+delir_version: Alpha.7
 ---
 
 # ポストエフェクト
@@ -31,7 +31,7 @@ macOS: `$HOME/Library/Application\ Support/delir/plugins/`
 以下のコマンドを実行してください
 
 ```sh
-yarn install # 依存モジュールをインストールする
+yarn # 依存モジュールをインストールする
 yarn dev # 更新監視モードで開発を始める（コードを書き換えると自動的にコンパイルが行われる）
 ```
 

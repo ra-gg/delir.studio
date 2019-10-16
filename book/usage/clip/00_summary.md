@@ -1,3 +1,7 @@
+---
+delir_version: Alpha.7
+---
+
 # クリップ
 
 ![Clips](../../assets/usage/clip/clips.png)

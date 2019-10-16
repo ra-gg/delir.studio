@@ -1,5 +1,5 @@
 ---
-delir_version: Alpha.6
+delir_version: Alpha.7
 ---
 
 # @delirvfx/core
@@ -7,19 +7,18 @@ delir_version: Alpha.6
 `@delirvfx/core` は Delir のうちのプロジェクトスキーマの定義・レンダリングフローの制御をメインに担当するモジュールです。
 単体の Node モジュールとして書かれているため、Delir 外から利用することが可能です。（ただし、DOM API に依存しているため Node.js 上で利用することは出来ません）
 
-# DelirCore.Engine
+# Delir.Engine
 
 Engine 名前空間にはレンダリングに関わるコンポーネントが内包されています。
-この名前空間はさらに`Pipeline`と`Renderer`に分かれています。
 
-## DelirCore.Engine.Pipeline
+## Delir.Engine.Engine
 
-レンダリングフローを制御するエンジンです。
+レンダリングフローを制御するエンジンクラスです
 
-# DelirCore.Project
+# Delir.Entity
 
-（あとで書く）
+プロジェクトスキーマクラス郡の名前空間です
 
-# DelirCore.Helper
+# Delir.Value
 
-（あとで書く）
+バリューオブジェクト郡の名前空間です

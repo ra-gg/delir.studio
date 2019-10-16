@@ -8,6 +8,12 @@ _実装例を募集しています。ポストエフェクトを開発された�
 
 ## 実装例
 
+### Chromakey
+
+[ソースコード](https://github.com/ra-gg/Delir/blob/master/packages/post-effect-plugins/chromakey/index.ts)
+
+WebGL を利用したクロマキーエフェクトです。Delir に標準で入っています。
+
 ### The world
 
 [ソースコード](https://github.com/ra-gg/Delir/blob/master/packages/post-effect-plugins/the-world/index.ts)
