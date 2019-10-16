@@ -9,7 +9,7 @@ Delir は`@delirvfx/core`で利用可能なプロジェクトを生成するた�
 
 ## 利用ライブラリ
 
-Delir は `React` / [`fleur`](https://www.npmjs.com/package/@ragg/fleur) を軸に開発されています。
+Delir は `React` / [`fleur`](https://www.npmjs.com/package/@fleur/fleur) を軸に開発されています。
 
 キーフレームエディタでは SVG を React 越しに利用しており、こちらは一切のライブラリを利用していません。（計算式やイベントハンドリングが独特で、要求に合致してなおかつ高速で開発できるライブラリがなかったため。D3.js の利用は検討されましたが、実装途中で破棄されました）
 
