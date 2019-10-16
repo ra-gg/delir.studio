@@ -151,9 +151,9 @@ class Particle {
 
   generate() {
     this.points = [
-      [-50 + 100 * Math.random(), -50 + 100 * Math.random()],
-      [-50 + 100 * Math.random(), -50 + 100 * Math.random()],
-      [-50 + 100 * Math.random(), -50 + 100 * Math.random()]
+      [-80 + 160 * Math.random(), -80 + 160 * Math.random()],
+      [-80 + 160 * Math.random(), -80 + 160 * Math.random()],
+      [-80 + 160 * Math.random(), -80 + 160 * Math.random()]
     ];
     this.type = Math.random() > 0.5 ? "stroke" : "fill";
     this.movement = rangeRandom(0.5, 2);
@@ -170,7 +170,16 @@ class Particle {
     ctx.lineTo(p2[0] + x, p2[1] + y);
     ctx.lineTo(p3[0] + x, p3[1] + y);
     ctx.closePath();
+
     this.type === "fill" ? ctx.fill() : ctx.stroke();
+
+    if (Math.random() > 0.995) {
+      this.type = this.type === "fill" ? "stroke" : "fill";
+      this.points.forEach(vert => {
+        vert[0] = rangeRandom(vert[0] - 20, vert[0] + 20);
+        vert[1] = rangeRandom(vert[1] - 20, vert[1] + 20);
+      });
+    }
 
     this.points[0] = [
       this.points[0][0] * rangeRandom(0.99, 0.999),
@@ -189,10 +198,14 @@ class Particle {
       this.generate();
       this.position = [
         x + rangeRandom(-0.5, 0.5),
-        ctx.canvas.height * rangeRandom(0.5, 1.5)
+        ctx.canvas.height * rangeRandom(1, 1.5)
       ];
     } else {
-      this.position = [x - 0.5 * Math.sin(t / 1000), y - this.movement];
+      this.position = [
+        x -
+          rangeRandom(-0.5, 1) * Math.sin((t * 0.1) / rangeRandom(1000, 2000)),
+        y - this.movement
+      ];
     }
   }
 }
