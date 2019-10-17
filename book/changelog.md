@@ -9,7 +9,7 @@
 - [#379](https://github.com/ra-gg/Delir/pull/379) プラグインの開発体験が良くなった！具体的には**開発中のプラグインが勝手にリロードされるようになった！** これでどんどんエフェクトを作ってくれ 🌈
 - [#296](https://github.com/ra-gg/Delir/pull/296) **「平面クリップ」が追加された！**つまり今までの Delir は無次元だったのか…？
 - [#380](https://github.com/ra-gg/Delir/pull/380) **アルファチャンネル付き動画（背景透過動画）の書き出しが出来るようになった！**Delir で作ったほうが早い動画は Delir で作って、AfterEffects や AviUtl に持ち込んでくれ！
-- [#390](https://github.com/ra-gg/Delir/pull/390) **Contribution Guide([日本語](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING-ja.md), English(https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING.md))を整備した。** Delir はいつでも Issue や Pull Request を待ってるよ！
+- [#390](https://github.com/ra-gg/Delir/pull/390) **Contribution Guide([日本語](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING-ja.md), [English](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING.md))を整備した。** Delir はいつでも Issue や Pull Request を待ってるよ！
 
 ---
 
