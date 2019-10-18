@@ -6,12 +6,11 @@ delir_version: Alpha.7
 
 ## プラグインインターフェース
 
-ソースコード: https://github.com/ra-gg/Delir/blob/master/packages/core/plugin-example/src/index.ts
+サンプルプラグイン: https://github.com/ra-gg/Delir/blob/master/packages/core/plugin-example/src/index.ts
 
 ### PostEffectBase クラス
 
-ポストエフェクトクラスは`@delirvfx/core`から提供されている`PostEffectBase`クラスを継承して、`export default`で export してください。
-`default`以外に export されたクラスは無視されます。
+ポストエフェクトクラスは`@delirvfx/core`から提供されている`PostEffectBase`クラスを継承して、`export default`で export してください。`default`以外に export されたクラスは無視されます。
 
 必要なメソッドの詳細については後述します。
 
@@ -121,7 +120,7 @@ async initialize(context: EffectPreRenderContext<Params>) {
 
 ### `async render(context: EffectRenderContext)`
 
-１フレームのレンダリングを行います。
+1 フレームのレンダリングを行います。
 `context`オブジェクトには以下のパラメータなどが渡されます
 
 - `context.parameters: any` - 現在のフレームでのパラメータ。provideParameters で指定したパラメータ名をキーに持つオブジェクト

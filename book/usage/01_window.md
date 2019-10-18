@@ -4,7 +4,7 @@ delir_version: Alpha.6
 
 # 画面構成
 
-![screenshot](../assets/usage/delir_window.png)
+![screenshot](../assets/usage-delir-window.png)
 
 #### ツールバー
 

@@ -2,19 +2,17 @@
 delir_version: Alpha.7
 ---
 
-# ポストエフェクト
+# 実装例
 
 _実装例を募集しています。ポストエフェクトを開発された方は公式 Twitter や Discord などでぜひご連絡ください_
 
-## 実装例
-
-### Chromakey
+## Chromakey
 
 [ソースコード](https://github.com/ra-gg/Delir/blob/master/packages/post-effect-plugins/chromakey/index.ts)
 
 WebGL を利用したクロマキーエフェクトです。Delir に標準で入っています。
 
-### The world
+## The world
 
 [ソースコード](https://github.com/ra-gg/Delir/blob/master/packages/post-effect-plugins/the-world/index.ts)
 
