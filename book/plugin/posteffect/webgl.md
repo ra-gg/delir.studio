@@ -42,7 +42,7 @@ export default class Effect extends PostEffectBase {
   private program: WebGLProgram;
 
   public static provideParameters() {
-    return Type.colorRgb('color', { label: 'Color', defaultValue: new Values.ColorRGB(0, 0, 0)})
+    return Type.colorRgb('color', { label: 'Color', defaultValue: () => new Values.ColorRGB(0, 0, 0)})
   }
 
   public async initialize(context: EffectPreRenderContext<Params>) {

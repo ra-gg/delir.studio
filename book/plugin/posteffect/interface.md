@@ -67,11 +67,11 @@ public static provideParameters() {
       // .<型名>('パラメータ名', {パラメータオプション})
       //   label - ユーザに表示されるパラメータ名を指定します。
       //   defaultValue - 初期値を指定します
-      .number("x", { label: "位置X", defaultValue: 0 })
-      .float("y", { label: "位置Y", defaultValue: 0 })
-      .bool("visibility", { label: "可視", defaultValue: true })
-      .string("text", { label: "テキスト", defaultValue: "text" })
-      .colorRgba('color', { label: '色', defaultValue: new Values.ColorRGBA(0, 0, 0, 1)})
+      .number("x", { label: "位置X", defaultValue: () => 0 })
+      .float("y", { label: "位置Y", defaultValue: () => 0 })
+      .bool("visibility", { label: "可視", defaultValue: () => true })
+      .string("text", { label: "テキスト", defaultValue: () => "text" })
+      .colorRgba('color', { label: '色', defaultValue: () => new Values.ColorRGBA(0, 0, 0, 1)})
       .asset("image", {
         label: "画像",
         // extensions - 読み込み可能なファイルの拡張子のリスト
@@ -81,7 +81,7 @@ public static provideParameters() {
       .enum("fontFamily", {
         label: "書体",
         selection: ["sans-serif", "serif"],
-        defaultValue: "serif"
+        defaultValue: () => "serif"
       })
       .code('shader', {
         label: 'Shader',
