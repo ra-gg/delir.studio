@@ -6,7 +6,7 @@
     - [プレビュー](usage/preview.md)
   - [クリップ](usage/clip/00_summary.md)
     - [p5.js](usage/clip/06_p5js.md)
-  - [エクスプレッション](usage/0x_expression.md)
+  - [エクスプレッション](usage/expression.md)
   - [プラグイン](usage/plugin.md)
 - [プラグイン開発](plugin/00_summary.md)
   - [ポストエフェクト](plugin/posteffect/summary.md)
