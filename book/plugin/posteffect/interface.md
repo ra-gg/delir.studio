@@ -86,7 +86,7 @@ public static provideParameters() {
       .code('shader', {
         label: 'Shader',
         langType: 'glsl',
-        defaultValue: new Values.Expression('glsl', 'precision mideump float;')
+        defaultValue: () => new Values.Expression('glsl', 'precision mideump float;')
       })
   );
 }
@@ -162,9 +162,9 @@ async render(context: EffectPreRenderContext<Params>)
 public static provideParameters() {
   return (
     Type
-      .number("x", { label: "位置X", defaultValue: 0 })
-      .bool("visibility", { label: "可視", defaultValue: true })
-      .string("text", { label: "テキスト", defaultValue: "text" })
+      .number("x", { label: "位置X", defaultValue: () => 0 })
+      .bool("visibility", { label: "可視", defaultValue: () => true })
+      .string("text", { label: "テキスト", defaultValue: () => "text" })
       .asset("image", {
         label: "画像",
         extensions: ["jpg", "jpeg", "png", "gif"]
