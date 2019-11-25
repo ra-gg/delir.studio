@@ -4,12 +4,13 @@
 
 - [#215](https://github.com/ra-gg/Delir/pull/215) [実験的] **ポストエフェクトで WebGL が使えるようになった！**君の自慢の GPU を使い倒してやれ！
   エフェクト開発のフィードバックも募集してるぞ！
-  - [#215](https://github.com/ra-gg/Delir/pull/215) Chromakey ポストエフェクトが追加された！
-  - [#392](https://github.com/ra-gg/Delir/pull/392) WebGL ポストエフェクトが追加された！ ついに GLSL と映像がひとつになる時が来た！ 自慢のシェーダーぢからで映像を作ろう！
-  - [#392](https://github.com/ra-gg/Delir/pull/392) Time posterization ポストエフェクトが追加された！
-  - [#392](https://github.com/ra-gg/Delir/pull/392) Repeat Tile ポストエフェクトが追加された！
+  - [#215](https://github.com/ra-gg/Delir/pull/215) `Chromakey` ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `WebGL` ポストエフェクトが追加された！ ついに GLSL と映像がひとつになる時が来た！ 自慢のシェーダー力で映像を作ろう！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `Time posterization` ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `Repeat Tile` ポストエフェクトが追加された！
 - [#220](https://github.com/ra-gg/Delir/pull/220),[#370](https://github.com/ra-gg/Delir/pull/370),[#389](https://github.com/ra-gg/Delir/pull/389) **クリップの複数選択・複数クリップのレイヤー移動がついに実装された！**あって当たり前だよね。作るのはめちゃくちゃ大変だったけどね 🌟
-- [#379](https://github.com/ra-gg/Delir/pull/379) プラグインの開発体験が良くなった！具体的には**開発中のプラグインが勝手にリロードされるようになった！** これでどんどんエフェクトを作ってくれ 🌈
+  - キーフレームの複数選択はもうちょっと待ってくれよな
+- [#379](https://github.com/ra-gg/Delir/pull/379) プラグインの開発体験を改善した！つまり**開発中のプラグインが勝手にリロードされるようになった！** これでどんどんエフェクトを作ってくれ 🌈
 - [#296](https://github.com/ra-gg/Delir/pull/296) **「平面クリップ」が追加された！**つまり今までの Delir は無次元だったのか…？
 - [#380](https://github.com/ra-gg/Delir/pull/380) **アルファチャンネル付き動画（背景透過動画）の書き出しが出来るようになった！**Delir で作ったほうが早い動画は Delir で作って、AfterEffects や AviUtl に持ち込んでくれ！
 - [#390](https://github.com/ra-gg/Delir/pull/390) **Contribution Guide([日本語](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING-ja.md), [English](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING.md))を整備した。** Delir はいつでも Issue や Pull Request を待ってるよ！
