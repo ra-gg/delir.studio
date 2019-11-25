@@ -2,9 +2,12 @@
 
 ### 新機能
 
-- [#215](https://github.com/ra-gg/Delir/pull/215) [Experimental] **WebGL ポストエフェクトが使えるようになった！**君の自慢の GPU を使い倒してやれ！
+- [#215](https://github.com/ra-gg/Delir/pull/215) [実験的] **ポストエフェクトで WebGL が使えるようになった！**君の自慢の GPU を使い倒してやれ！
   エフェクト開発のフィードバックも募集してるぞ！
-  - [#215](https://github.com/ra-gg/Delir/pull/215) Chromakey ポストエフェクトが追加された！ なにも言わないよ、いい感じに使ってくれ！
+  - [#215](https://github.com/ra-gg/Delir/pull/215) Chromakey ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) WebGL ポストエフェクトが追加された！ ついに GLSL と映像がひとつになる時が来た！ 自慢のシェーダーぢからで映像を作ろう！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) Time posterization ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) Repeat Tile ポストエフェクトが追加された！
 - [#220](https://github.com/ra-gg/Delir/pull/220),[#370](https://github.com/ra-gg/Delir/pull/370),[#389](https://github.com/ra-gg/Delir/pull/389) **クリップの複数選択・複数クリップのレイヤー移動がついに実装された！**あって当たり前だよね。作るのはめちゃくちゃ大変だったけどね 🌟
 - [#379](https://github.com/ra-gg/Delir/pull/379) プラグインの開発体験が良くなった！具体的には**開発中のプラグインが勝手にリロードされるようになった！** これでどんどんエフェクトを作ってくれ 🌈
 - [#296](https://github.com/ra-gg/Delir/pull/296) **「平面クリップ」が追加された！**つまり今までの Delir は無次元だったのか…？
@@ -24,7 +27,7 @@
 
 - [#210](https://github.com/ra-gg/Delir/pull/210) p5.js からオーディオバッファが読めるようになった！  
   （オーディオクリップを他のクリップより優先的に処理するようになりました）
-- [#269](https://github.com/ra-gg/Delir/pull/269) p5.js を v0.9.0 へバージョンアップした。詳細は[p5.js の changelog](https://github.com/processing/p5.js/releases/tag/0.9.0)を見てくれ
+- [#392](https://github.com/ra-gg/Delir/pull/392) p5.js を 0.8.0 から 0.9.0 へバージョンアップした。詳細は[p5.js の changelog](https://github.com/processing/p5.js/releases)を見てくれ
 - [@delirvfx/core][#224](https://github.com/ra-gg/Delir/pull/224) `Asset#path` がスキーマ付き URL を指定するように変更した！
 
 ### 互換性のない変更点
