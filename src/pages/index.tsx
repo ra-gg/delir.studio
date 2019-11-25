@@ -301,8 +301,30 @@ export default (props: IndexPageProps) => {
 
         <FeatureList>
           <Feature
+            title="Basic editing"
+            desc="Support basic editing. Can using video, image (of course SVG support), audio"
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faEdit}
+              />
+            }
+          />
+
+          <Feature
             title="p5.js integration"
-            desc="Engine usable as node package, it's published as `@delirvfx/core` on npm"
+            desc={
+              <>
+                Engine usable as node package, it's published as{" "}
+                <a
+                  href="https://www.npmjs.com/package/@delirvfx/core"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  `@delirvfx/core` on npm
+                </a>
+              </>
+            }
             icon={
               <img
                 src={require("../assets/p5js.svg")}
@@ -316,7 +338,6 @@ export default (props: IndexPageProps) => {
             }
           />
 
-          {/*
           <Feature
             title="Post-effect by WebGL"
             desc={
@@ -338,7 +359,17 @@ export default (props: IndexPageProps) => {
               />
             }
           />
-          */}
+
+          <Feature
+            title="Expression support"
+            desc="Expression works, with keyframe animation and modern JavaScript syntax"
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faSuperscript}
+              />
+            }
+          />
 
           <Feature
             title="Stand-alone engine"
@@ -347,27 +378,6 @@ export default (props: IndexPageProps) => {
               <FontAwesomeIcon
                 style={{ width: "100%", height: "100%", color: "#ddd" }}
                 icon={faCubes}
-              />
-            }
-          />
-
-          <Feature
-            title="Basic editing"
-            desc="Support basic editing. Can using video, image (of course SVG support), audio"
-            icon={
-              <FontAwesomeIcon
-                style={{ width: "100%", height: "100%", color: "#ddd" }}
-                icon={faEdit}
-              />
-            }
-          />
-          <Feature
-            title="Expression support"
-            desc="Expression works, with animated value, with early JavaScript syntax"
-            icon={
-              <FontAwesomeIcon
-                style={{ width: "100%", height: "100%", color: "#ddd" }}
-                icon={faSuperscript}
               />
             }
           />
