@@ -68,13 +68,14 @@ export const SiteHeader = () => (
       <div className="row between-xs">
         <div className="col-xs-12 col-md-3">
           <BrandLink to="/" style={{ color: "#fff" }}>
-            Delir<small style={{ color: "#865d98" }}>Alpha.6</small>
+            Delir<small style={{ color: "#865d98" }}>Alpha.7</small>
           </BrandLink>
         </div>
         <SiteNav className="col-xs-12 col-md-9">
           <a href="/docs">Document (ja)</a>
-          <a href="https://github.com/Ragg-/delir">GitHub</a>
+          <a href="https://spectrum.chat/delirvfx">Forum</a>
           <a href="https://discord.gg/rrr2z2E ">Discord</a>
+          <a href="https://github.com/ra-gg/delir">GitHub</a>
           <a href="https://trello.com/b/2WiN64z2/delir">Roadmap</a>
         </SiteNav>
       </div>

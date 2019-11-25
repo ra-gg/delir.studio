@@ -1,16 +1,13 @@
 import * as React from "react";
-import Link from "gatsby-link";
+import styled from "styled-components";
 import Helmet from "react-helmet";
 import { SiteHeader } from "./SiteHeader";
 import { createGlobalStyle } from "styled-components";
 import "../assets/flexboxgrid.css";
 import { SiteFooter } from "./SiteFooter";
 
-interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
-  location: {
-    pathname: string;
-  };
-  children: any;
+interface Props {
+  children: React.ReactNode;
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -25,6 +22,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, 'YuGothic', '游ゴシック Medium', 'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
     font-size: 16px;
     line-height: 1.5;
+  }
+
+  #___gatsby {
+    height: 100%;
+  }
+
+  #gatsby-focus-wrapper {
+    height: 100%;
   }
 
   a {
@@ -67,9 +72,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default (props: DefaultLayoutProps) => {
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+`;
+
+const Content = styled.main`
+  flex: 1;
+`;
+
+export default (props: Props) => {
   return (
-    <div>
+    <Wrapper>
       <GlobalStyle />
       <Helmet
         title="Delir"
@@ -83,8 +98,8 @@ export default (props: DefaultLayoutProps) => {
         ]}
       />
       <SiteHeader />
-      <main>{props.children}</main>
+      <Content>{props.children}</Content>
       <SiteFooter />
-    </div>
+    </Wrapper>
   );
 };

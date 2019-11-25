@@ -1,11 +1,66 @@
-## Alpha.6.2 (v0.6.2) at 01/23/2019
+# Alpha.7 (v0.7.0) at 10/2x/2019
+
+### 新機能
+
+- [#215](https://github.com/ra-gg/Delir/pull/215) [実験的] **ポストエフェクトで WebGL が使えるようになった！**君の自慢の GPU を使い倒してやれ！
+  エフェクト開発のフィードバックも募集してるぞ！
+  - [#215](https://github.com/ra-gg/Delir/pull/215) `Chromakey` ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `WebGL` ポストエフェクトが追加された！ ついに GLSL と映像がひとつになる時が来た！ 自慢のシェーダー力で映像を作ろう！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `Time posterization` ポストエフェクトが追加された！
+  - [#392](https://github.com/ra-gg/Delir/pull/392) `Repeat Tile` ポストエフェクトが追加された！
+- [#220](https://github.com/ra-gg/Delir/pull/220),[#370](https://github.com/ra-gg/Delir/pull/370),[#389](https://github.com/ra-gg/Delir/pull/389) **クリップの複数選択・複数クリップのレイヤー移動がついに実装された！**あって当たり前だよね。作るのはめちゃくちゃ大変だったけどね 🌟
+  - キーフレームの複数選択はもうちょっと待ってくれよな
+- [#379](https://github.com/ra-gg/Delir/pull/379) プラグインの開発体験を改善した！つまり**開発中のプラグインが勝手にリロードされるようになった！** これでどんどんエフェクトを作ってくれ 🌈
+- [#296](https://github.com/ra-gg/Delir/pull/296) **「平面クリップ」が追加された！**つまり今までの Delir は無次元だったのか…？
+- [#380](https://github.com/ra-gg/Delir/pull/380) **アルファチャンネル付き動画（背景透過動画）の書き出しが出来るようになった！**Delir で作ったほうが早い動画は Delir で作って、AfterEffects や AviUtl に持ち込んでくれ！
+- [#390](https://github.com/ra-gg/Delir/pull/390) **Contribution Guide([日本語](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING-ja.md), [English](https://github.com/ra-gg/Delir/blob/master/CONTRIBUTING.md))を整備した。** Delir はいつでも Issue や Pull Request を待ってるよ！
+
+---
+
+- [#206](https://github.com/ra-gg/Delir/pull/206) プレビュー中の音量を調整できるようになった！🔉 これで魔法使いも市長も怖くないぜ！
+- [#380](https://github.com/ra-gg/Delir/pull/380) レンダリング時のエンコード方式を設定できるようになった！
+- [#212](https://github.com/ra-gg/Delir/pull/212) エフェクトの順序を入れ替えられるようになった！
+- [#371](https://github.com/ra-gg/Delir/pull/371) アセットのファイル差し替えが出来るようになった！
+- [#371](https://github.com/ra-gg/Delir/pull/371) プロジェクトとアセットをまとめて`.delirpp ファイル`に書き出す機能を実装した！他の人にプロジェクトを渡したいときに使ってくれ！
+- [#244](https://github.com/ra-gg/Delir/pull/244) ちょっとしたアニメーションを入れてみた。気に入ってもらえるとうれしいな 😉
+
+### 変更点
+
+- [#210](https://github.com/ra-gg/Delir/pull/210) p5.js からオーディオバッファが読めるようになった！  
+  （オーディオクリップを他のクリップより優先的に処理するようになりました）
+- [#392](https://github.com/ra-gg/Delir/pull/392) p5.js を 0.8.0 から 0.9.0 へバージョンアップした。詳細は[p5.js の changelog](https://github.com/processing/p5.js/releases)を見てくれ
+- [@delirvfx/core][#224](https://github.com/ra-gg/Delir/pull/224) `Asset#path` がスキーマ付き URL を指定するように変更した！
+
+### 互換性のない変更点
+
+- [#218](https://github.com/ra-gg/Delir/pull/218) 標準エフェクトの ID が`@delirvfx/`で始まるように変更した。
+  申し訳ないけど、Alpha.6.2 以前のプロジェクト内のエフェクトが利用できなくなりました 😔
+
+### バグ修正
+
+- [#208](https://github.com/ra-gg/Delir/pull/208) 「プロジェクトを開く」 ダイアログを Esc キーでキャンセルしたときにキャンセル出来ていなかった不具合を修正
+- 他にもなにか直したり壊したりしたかも…
+
+### [Experimental] `@delirvfx/core`
+
+- [#225](https://github.com/ra-gg/Delir/pull/225) Delir のエンジン、`@delirvfx/core`が npm より単体パッケージとして利用できるようになった！
+  `ぼくのかんがえたさいきょーのえいぞうへんしゅうそふと`を見せてくれ！ サンプルコードは[こちら](https://github.com/ra-gg/Delir/blob/master/packages/web-example/src/index.ts)
+
+### 内部変更
+
+- [#371](https://github.com/ra-gg/Delir/pull/371) Delir のフロントエンドに [`styled-components`](http://styled-components.com) がやってきた！ 型とイケイケ UI 神の御加護がありますように！
+- [#207](https://github.com/ra-gg/Delir/pull/207) 翻訳キーに型の御加護がかかった！
+- [#285](https://github.com/ra-gg/Delir/pull/285) [Storybook](https://storybook.js.org/) が導入された！これからもっとイケイケな UI にしていくぜ！
+  - UI コンポーネントのリファクタリングもした
+
+# Alpha.6.2 (v0.6.2) at 01/23/2019
 
 ### 変更点
 
 - [#204](https://github.com/ra-gg/Delir/pull/204) タイムラインを拡大したときにスクロールがガタッとなって左に戻る事があった不具合を修正した！
 - [#205](https://github.com/ra-gg/Delir/pull/205) レンダリングを高速化した！（特にフッテージを多く使う時のプレビューがかなりマシになった！）
 
-## Alpha.6 (v0.6.0) at 01/20/2019
+# Alpha.6 (v0.6.0) at 01/20/2019
 
 ### 新機能
 
@@ -61,7 +116,7 @@
 - [#182](https://github.com/ra-gg/Delir/pull/182) オフラインレンダリングが実装された
 - [#191](https://github.com/ra-gg/Delir/pull/191), #193 Delir の開発に ReduxDevTools が使えるようになった、Redux は使ってないけどね！
 
-## Alpha.5 (v0.5.2) at 09/14/2018
+# Alpha.5 (v0.5.2) at 09/14/2018
 
 ### 新機能
 
@@ -97,7 +152,7 @@
 - [#167](https://github.com/ra-gg/Delir/pull/167) オーディオのデコード処理を OfflineAudioContext でするようにしました。
   美しいオーロラは終わったんだ。もうあの時間は終わって、君も空っぽのコンポジションと向き合う時が来たんだ。
 
-## Alpha.4.1 (v0.4.1) at 09/20/2017
+# Alpha.4.1 (v0.4.1) at 09/20/2017
 
 ### 新機能
 
@@ -124,11 +179,11 @@
 - [#130](https://github.com/ra-gg/Delir/pull/130) `カラーキーフレームが破損していた問題を修正` の影響で Alpha.3 のプロジェクトファイルと直接的な互換性がなくなりました（#131 で追加された ProjectMigrator を利用することで Alpha.4 で利用可能な形式へマイグレート出来ます）
   Delir では、プロジェクトを開いた際に自動的にマイグレートされるのでエンドユーザーへの影響はありません。
 
-## Alpha.3 at 08/20/2017
+# Alpha.3 at 08/20/2017
 
 ### 新機能
 
-- [#87](https://github.com/ra-gg/Delir/pull/87), #89 エクスプレッション機能が実装されました
+- [#87](https://github.com/ra-gg/Delir/pull/87), [#89](https://github.com/ra-gg/Delir/pull/89) エクスプレッション機能が実装されました
 - [#88](https://github.com/ra-gg/Delir/pull/88) 複数の音源の同時再生が可能になりました
 - [#99](https://github.com/ra-gg/Delir/pull/99) 英語/日本語に対応しました
 - [#101](https://github.com/ra-gg/Delir/pull/101) スペースキーでプレビューの再生ができるようになりました
@@ -153,7 +208,7 @@
   - `project.symbolIds` が削除されました
   - エンティティが生成されたときにエンティティ ID が設定されるようになりました
 
-## Alpha.2 at 04/28/2017
+# Alpha.2 at 04/28/2017
 
 ### 新機能
 
@@ -180,6 +235,6 @@
   （変更前は mime type によって判定していましたが、Chromium が認識できないファイルタイプのハンドリングができなかったため変更されました。）
 - [3e8b3fe](https://github.com/ra-gg/Delir/commit/3e8b3fe) Windows での Delir のビルド対応が改善されました
 
-## Alpha.1 at 04/07/2017
+# Alpha.1 at 04/07/2017
 
 初期リリース
