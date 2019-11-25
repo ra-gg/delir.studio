@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEdit,
   faSuperscript,
-  faCubes
+  faCubes,
+  faPlug
 } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/Layout";
 import useMeasure from "use-measure";
@@ -367,6 +368,23 @@ export default (props: IndexPageProps) => {
               <FontAwesomeIcon
                 style={{ width: "100%", height: "100%", color: "#ddd" }}
                 icon={faSuperscript}
+              />
+            }
+          />
+
+          <Feature
+            title="Plugin support"
+            desc={
+              <>
+                Extensible post-effect as Plugin, It's makes with TypeScript and
+                HTML5 Canvas features.{" "}
+                <a href="/docs/plugin/summary.html">Learn more (ja)</a>
+              </>
+            }
+            icon={
+              <FontAwesomeIcon
+                style={{ width: "100%", height: "100%", color: "#ddd" }}
+                icon={faPlug}
               />
             }
           />

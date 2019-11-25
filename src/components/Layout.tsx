@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  #gatsby-focus-wrapper {
+    height: 100%;
+  }
+
   a {
     color: #11abcd;
     text-decoration: none;
