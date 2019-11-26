@@ -378,7 +378,7 @@ export default (props: IndexPageProps) => {
               <>
                 Extensible post-effect as Plugin, It's makes with TypeScript and
                 HTML5 Canvas features.{" "}
-                <a href="/docs/plugin/summary.html">Learn more (ja)</a>
+                <a href="docs/plugin/00_summary.html">Learn more (ja)</a>
               </>
             }
             icon={
