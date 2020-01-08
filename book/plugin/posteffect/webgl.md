@@ -8,8 +8,8 @@ Delir Alpha.7 から実験的な WebGL ポストエフェクトの対応が始�
 このセクションでは、Delir の WebGL API を利用したポストエフェクトの開発を解説します。
 （既に[プラグインインターフェース](./interface.html)を読んでいる前提で進めます。）
 
-参考: [Chromakey ポストエフェクト](https://github.com/ra-gg/Delir/blob/master/packages/post-effect-plugins/chromakey/index.ts)
-Delir の WebGL API ラッパー: [WebGLContext.ts](https://github.com/ra-gg/Delir/blob/master/packages/core/src/Engine/WebGL/WebGLContext.ts#L61)
+参考: [Chromakey ポストエフェクト](https://github.com/delirvfx/delir/blob/master/packages/post-effect-plugins/chromakey/index.ts)
+Delir の WebGL API ラッパー: [WebGLContext.ts](https://github.com/delirvfx/delir/blob/master/packages/core/src/Engine/WebGL/WebGLContext.ts#L61)
 
 ## `initialize` メソッド
 

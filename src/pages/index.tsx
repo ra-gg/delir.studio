@@ -285,7 +285,7 @@ export default (props: IndexPageProps) => {
                   (Alpha release)
                 </SubTitle>
               </div>
-              <DownloadButton href="https://github.com/ra-gg/Delir/releases/latest">
+              <DownloadButton href="https://github.com/delirvfx/delir/releases/latest">
                 Download
                 <small>Available on Windows, macOS and Linux</small>
               </DownloadButton>

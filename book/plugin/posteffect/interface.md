@@ -6,7 +6,7 @@ delir_version: Alpha.7
 
 ## プラグインインターフェース
 
-サンプルプラグイン: https://github.com/ra-gg/Delir/blob/master/packages/core/plugin-example/src/index.ts
+サンプルプラグイン: https://github.com/delirvfx/delir/blob/master/packages/core/plugin-example/src/index.ts
 
 ### PostEffectBase クラス
 

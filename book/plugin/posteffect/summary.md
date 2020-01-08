@@ -6,8 +6,8 @@ delir_version: Alpha.7
 
 ポストエフェクトプラグインでは、レンダラーによってレンダリングされた画素情報を加工することが出来ます。
 
-[サンプルプロジェクト(GitHub)](https://github.com/ra-gg/Delir/tree/master/packages/core/plugin-example)
-[プロジェクトテンプレートをダウンロード](https://github.com/ra-gg/Delir/files/906748/plugin-example-88bd02b.zip)
+[サンプルプロジェクト(GitHub)](https://github.com/delirvfx/delir/tree/master/packages/core/plugin-example)
+[プロジェクトテンプレートをダウンロード](https://github.com/delirvfx/delir/files/906748/plugin-example-88bd02b.zip)
 
 **注意**
 

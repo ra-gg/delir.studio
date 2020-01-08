@@ -75,7 +75,7 @@ export const SiteHeader = () => (
           <a href="/docs">Document (ja)</a>
           <a href="https://spectrum.chat/delirvfx">Forum</a>
           <a href="https://discord.gg/rrr2z2E ">Discord</a>
-          <a href="https://github.com/ra-gg/delir">GitHub</a>
+          <a href="https://github.com/delirvfx/delir">GitHub</a>
           <a href="https://trello.com/b/2WiN64z2/delir">Roadmap</a>
         </SiteNav>
       </div>
