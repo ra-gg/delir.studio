@@ -1,0 +1,45 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+    - 14.14.25
+    - 14.14.28
+    - 14.14.31
+    - 14.14.32
+    - 14.14.34
+    - 14.14.35
+    - 14.14.37
+  - dependency-name: "@types/styled-components"
+    versions:
+    - 5.1.7
+    - 5.1.8
+  - dependency-name: gatsby
+    versions:
+    - 2.31.1
+    - 2.32.11
+    - 2.32.3
+    - 2.32.4
+    - 2.32.8
+    - 2.32.9
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.0
+    - 17.0.1
+    - 17.0.2
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.0
+    - 17.0.1
+    - 17.0.2
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
